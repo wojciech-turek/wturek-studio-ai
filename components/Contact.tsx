@@ -5,8 +5,15 @@ import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "./ui/dialog";
 
 export function Contact() {
   const t = useTranslations("contact");
@@ -16,21 +23,35 @@ export function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [showErrorDialog, setShowErrorDialog] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission - in production, you'd send this to an API
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // For now, we'll just log the data and reset the form
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
 
-    // You can add a toast notification here
-    alert(t("success"));
+      // Reset form on success
+      setFormData({ name: "", email: "", message: "" });
+      setShowSuccessDialog(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setShowErrorDialog(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -122,22 +143,8 @@ export function Contact() {
                 disabled={isSubmitting}
                 className="w-full gap-2"
               >
-                {isSubmitting ? (
-                  <>
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Send className="h-4 w-4" />
-                    </motion.div>
-                    {t("sending")}
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-4 w-4" />
-                    {t("send")}
-                  </>
-                )}
+                <Send className="h-4 w-4" />
+                {isSubmitting ? t("sending") : t("send")}
               </Button>
             </form>
           </motion.div>
@@ -156,10 +163,10 @@ export function Contact() {
               </div>
               <h3 className="mb-2 text-xl font-semibold">{t("orEmail")}</h3>
               <a
-                href="mailto:contact@wturekstudio.ai"
+                href="mailto:studio@wojciechturek.com"
                 className="text-lg text-primary hover:underline"
               >
-                contact@wturekstudio.ai
+                studio@wojciechturek.com
               </a>
             </div>
 
@@ -171,6 +178,53 @@ export function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
+              <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
+            </div>
+            <DialogTitle className="text-center text-2xl">
+              {t("success")}
+            </DialogTitle>
+            <DialogDescription className="text-center">
+              {t("successDescription")}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center">
+            <Button onClick={() => setShowSuccessDialog(false)}>
+              {t("close")}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Error Dialog */}
+      <Dialog open={showErrorDialog} onOpenChange={setShowErrorDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center text-2xl">
+              {t("error")}
+            </DialogTitle>
+            <DialogDescription className="text-center">
+              {t("errorDescription")}{" "}
+              <a
+                href="mailto:studio@wojciechturek.com"
+                className="text-primary hover:underline"
+              >
+                studio@wojciechturek.com
+              </a>
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center">
+            <Button onClick={() => setShowErrorDialog(false)}>
+              {t("close")}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

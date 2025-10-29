@@ -1,9 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -16,33 +16,17 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20 pt-16">
-      {/* Animated background elements */}
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-16"
+    >
+      {/* Mesh Grid Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-1/2 left-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
-          animate={{
-            y: [0, 50, 0],
-            x: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-1/2 right-1/4 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
-          animate={{
-            y: [0, -50, 0],
-            x: [0, -30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+        {/* Mesh overlay for texture */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDAsMCwwLDAuMTIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-50" />
+
+        {/* Gradient fade at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-20 text-center">
@@ -123,7 +107,11 @@ export function Hero() {
             <div className="h-8 w-5 rounded-full border-2 border-muted-foreground/30">
               <motion.div
                 animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="mx-auto mt-1 h-2 w-1 rounded-full bg-muted-foreground/30"
               />
             </div>
