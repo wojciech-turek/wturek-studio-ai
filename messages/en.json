@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your AI. Your Solutions.",
+    "subtitle": "Wojciech Turek Studio AI",
+    "description": "We create intelligent AI solutions that drive your business forward. From content generation to advanced automations – we help turn ideas into reality.",
+    "cta": "Get in Touch",
+    "ctaSecondary": "View Services"
+  },
+  "services": {
+    "title": "What We Offer",
+    "subtitle": "Comprehensive AI solutions tailored to your needs",
+    "contentGeneration": {
+      "title": "Content Generation",
+      "description": "Harness the power of AI to create high-quality content. From marketing copy to technical documentation – we automate your content creation process."
+    },
+    "automation": {
+      "title": "Automations",
+      "description": "We build custom automation solutions that streamline workflows, reduce errors, and boost your team's productivity."
+    },
+    "consulting": {
+      "title": "AI Consulting",
+      "description": "Professional consulting on AI strategy. We help identify opportunities, develop action plans, and implement AI solutions in your organization."
+    },
+    "development": {
+      "title": "Software Development",
+      "description": "Full-stack development services: frontend, backend, Python and TypeScript scripts. We create scalable solutions tailored to your requirements."
+    }
+  },
+  "about": {
+    "title": "About the Studio",
+    "description": "Wojciech Turek Studio AI specializes in creating innovative solutions powered by artificial intelligence. We combine programming expertise with customer relations experience to deliver solutions that are not only technologically advanced but also intuitive and practical.",
+    "expertise": "Our Expertise",
+    "skills": {
+      "ai": "AI Solutions",
+      "fullstack": "Full-stack Development",
+      "python": "Python & TypeScript",
+      "automation": "Process Automation",
+      "consulting": "Technical Consulting",
+      "customerFocus": "Customer-Centric Approach"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to transform your business with AI? Let's talk about your project.",
+    "name": "Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email",
+    "emailPlaceholder": "john@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "An error occurred. Please try again or contact us directly.",
+    "orEmail": "Or email us directly at"
+  },
+  "footer": {
+    "rights": "© 2025 Wojciech Turek Studio AI. All rights reserved.",
+    "madeWith": "Made with",
+    "by": "by Wojciech Turek Studio AI"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started"
+  }
+}

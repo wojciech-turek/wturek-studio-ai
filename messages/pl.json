@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Start",
+    "services": "Usługi",
+    "about": "O nas",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Twoje AI. Twoje rozwiązania.",
+    "subtitle": "Wojciech Turek Studio AI",
+    "description": "Tworzymy inteligentne rozwiązania AI, które napędzają Twój biznes. Od generowania treści po zaawansowane automatyzacje – pomagamy przekształcić pomysły w rzeczywistość.",
+    "cta": "Skontaktuj się z nami",
+    "ctaSecondary": "Zobacz usługi"
+  },
+  "services": {
+    "title": "Co oferujemy",
+    "subtitle": "Kompleksowe rozwiązania AI dostosowane do Twoich potrzeb",
+    "contentGeneration": {
+      "title": "Generowanie treści",
+      "description": "Wykorzystaj moc AI do tworzenia wysokiej jakości treści. Od tekstów marketingowych po dokumentację techniczną – automatyzujemy proces tworzenia treści."
+    },
+    "automation": {
+      "title": "Automatyzacje",
+      "description": "Zbudujemy dla Ciebie niestandardowe rozwiązania automatyzacyjne, które usprawniają przepływy pracy, redukują błędy i zwiększają produktywność Twojego zespołu."
+    },
+    "consulting": {
+      "title": "Konsulting AI",
+      "description": "Profesjonalne doradztwo w zakresie strategii AI. Pomagamy zidentyfikować możliwości, opracować plan działania i wdrożyć rozwiązania AI w Twojej organizacji."
+    },
+    "development": {
+      "title": "Rozwój oprogramowania",
+      "description": "Pełny zakres usług programistycznych: frontend, backend, skrypty Python i TypeScript. Tworzymy skalowalne rozwiązania dopasowane do Twoich wymagań."
+    }
+  },
+  "about": {
+    "title": "O Studio",
+    "description": "Wojciech Turek Studio AI specjalizuje się w tworzeniu innowacyjnych rozwiązań opartych na sztucznej inteligencji. Łączymy wiedzę programistyczną z doświadczeniem w obsłudze klienta, aby dostarczać nie tylko technologicznie zaawansowane, ale także intuicyjne i praktyczne rozwiązania.",
+    "expertise": "Nasza ekspertyza",
+    "skills": {
+      "ai": "Rozwiązania AI",
+      "fullstack": "Programowanie Full-stack",
+      "python": "Python & TypeScript",
+      "automation": "Automatyzacja procesów",
+      "consulting": "Doradztwo techniczne",
+      "customerFocus": "Orientacja na klienta"
+    }
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "subtitle": "Gotowy, aby przekształcić swój biznes za pomocą AI? Porozmawiajmy o Twoim projekcie.",
+    "name": "Imię i nazwisko",
+    "namePlaceholder": "Jan Kowalski",
+    "email": "Email",
+    "emailPlaceholder": "jan@przyklad.pl",
+    "message": "Wiadomość",
+    "messagePlaceholder": "Opowiedz nam o swoim projekcie...",
+    "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
+    "success": "Dziękujemy! Skontaktujemy się wkrótce.",
+    "error": "Wystąpił błąd. Spróbuj ponownie lub napisz do nas bezpośrednio.",
+    "orEmail": "Lub napisz bezpośrednio na"
+  },
+  "footer": {
+    "rights": "© 2025 Wojciech Turek Studio AI. Wszelkie prawa zastrzeżone.",
+    "madeWith": "Stworzone z",
+    "by": "przez Wojciech Turek Studio AI"
+  },
+  "common": {
+    "learnMore": "Dowiedz się więcej",
+    "getStarted": "Rozpocznij"
+  }
+}
