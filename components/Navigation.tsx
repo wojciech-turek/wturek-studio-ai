@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Globe, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import { Logo } from "./Logo";
 import { Button } from "./ui/button";
-import { Menu, X, Globe } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export function Navigation() {
   const t = useTranslations("nav");
@@ -14,14 +14,17 @@ export function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentLocale = pathname.split('/')[1] || 'pl';
-  const otherLocale = currentLocale === 'pl' ? 'en' : 'pl';
+  const currentLocale = pathname.split("/")[1] || "pl";
+  const otherLocale = currentLocale === "pl" ? "en" : "pl";
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
       setMobileMenuOpen(false);
+
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
   };
 
@@ -41,7 +44,10 @@ export function Navigation() {
     <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <button onClick={() => scrollToSection("home")} className="focus:outline-none">
+        <button
+          onClick={() => scrollToSection("home")}
+          className="focus:outline-none"
+        >
           <Logo />
         </button>
 
